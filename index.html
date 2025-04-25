@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfumes Géminis</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Géminis</h1>
+    <nav class="menu">
+      <a href="#">Inicio</a>
+      <a href="#">Productos</a>
+      <a href="#">Contacto</a>
+      <div class="filtro-container">
+        <select onchange="filtrarCategoria(this.value)">
+          <option value="todos">Todos</option>
+          <option value="masculino">Masculinos</option>
+          <option value="femenino">Femeninos</option>
+          <option value="unisex">Unisex</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Perfumes Árabes Exclusivos</h2>
+    <img src="https://images.unsplash.com/photo-1588096742984-e02f11c3b2a4?auto=format&fit=crop&w=1200&q=80" alt="Presentación" />
+  </section>
+  
+  <section id="perfumes">
+    <h2>Catálogo</h2>
+    <div class="products" id="products-container"></div>
+  </section>
+
+   <!-- Contacto -->
+   <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Email: contacto@perfumeria.com</p>
+    <p>WhatsApp: +54 9 11 1234-5678</p>
+    <div class="redes">
+      <a href="https://es-la.facebook.com/login/device-based/regular/login/"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/accounts/login/"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/i/flow/login"><i class="fab fa-twitter"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Perfumería. Todos los derechos reservados.</p>
+  </footer>
+
+  <div class="carrito-flotante" id="ver-carrito" onclick="enviarWhatsApp()">Ver Pedido 🛒</div>
+  <div class="toast" id="toast">Producto agregado ✅</div>
+  <script src="script.js"></script>
+</body>
+</html>
