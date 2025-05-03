@@ -1,0 +1,300 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fffbe6;
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+header {
+  background: #000;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #f5e2a9;
+}
+
+
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #4a1c1a, #000);
+  color: white;
+  gap: 3rem;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.hero img {
+  width: 300px;
+  height: auto;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 20px rgba(0,0,0,0.4));
+  transition: transform 0.4s ease;
+}
+
+.hero img:hover {
+  transform: scale(1.05);
+}
+
+.hero h2 {
+  max-width: 500px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  animation: slideUp 1s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/*aca se encuentra lo de la imagen de fondo del header */
+.main-header {
+  background-image: url('img/GEMINIS.png'); 
+  background-size: contain; 
+  background-position: 0% center;
+  background-repeat: no-repeat; 
+  color: white;
+  padding: 3rem 2rem; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(171, 168, 168, 0.1);
+  position: relative;
+  
+}
+
+.main-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(118, 103, 103, 0.4); /* Capa semitransparente encima de la imagen */
+  z-index: 1;
+}
+
+/* Para que el contenido del header esté encima de la capa */
+.main-header * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1200px) {
+  .main-header {
+    padding: 2rem 2rem;
+    height: auto; /* Ajusta la altura en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    padding: 1.5rem 1.5rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 1rem 1rem;
+    height: auto;
+  }
+}
+
+/* Menú de navegación en la esquina superior derecha */
+.menu {
+  position: absolute;
+  right: 20px; 
+  top: 20px;   
+}
+
+/* Aseguramos que los enlaces del menú se alineen correctamente */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 1rem; /* Espaciado entre los elementos del menú */
+}
+
+.nav-links li a {
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: #f5e2a9;
+  color: #4a1c1a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex; /* Para que imagen y texto estén en línea */
+  align-items: center; /* Centra verticalmente */
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.logo h1 {
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, color 0.3s ease;
+  left: 95px;
+  
+}
+
+.logo h1:hover {
+  transform: scale(1.1);
+  color: #d4af37;
+}
+
+
+.menu a.active {
+  color: #c69c6d;
+  font-weight: bold;
+}
+
+.filtro-container select {
+  background-color: #fff;
+  border: 2px solid #c69c6d;
+  padding: 8px 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.filtro-container select:hover {
+  background-color: #d4af37;
+  border-color: #f5e2a9;
+  transform: scale(1.05);
+}
+.slider {
+  overflow: hidden;
+  width: 100%;
+  background: #f9f9f9;
+  padding: 20px 0;
+}
+
+.slider-track {
+  display: flex;
+  width: calc(300px * 6); /* Ancho = tamaño imagen * cantidad de imágenes */
+  animation: scroll 20s linear infinite;
+}
+
+.slider img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  margin: 0 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Animación */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+
+}
+
+.product {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.product button {
+  background: linear-gradient(to right, #d4af37, #f5e2a9);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.product button:hover {
+  background: linear-gradient(to right, #c49e2d, #e5d39c);
+}
+
+.toast, .carrito-flotante {
+  position: fixed;
+  right: 20px;
+  padding: 10px;
+  background: #25d366;
+  color: white;
+  border-radius: 10px;
+  display: none;
+}
+
+.toast { bottom: 80px; }
+.carrito-flotante { bottom: 20px; background: #4a1c1a; }
+
+#contacto {
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #d4af37 0%, #f5e2a9 100%);
+  border: none;
+}
+
+footer {
+  text-align: center;
+  background: black;
+  color: white;
+  padding: 1rem;
+  margin-top: 0;
+}
+
